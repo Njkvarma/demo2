@@ -5,7 +5,12 @@
 
 trigger:
 - master
-
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Azure for Students (6d0e6d2e-cd5a-4f3e-b17a-afc9bce653dc)'
+    appType: 'webAppLinux'
+    appName: 'webrres'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
 pool:
   vmImage: ubuntu-latest
 
